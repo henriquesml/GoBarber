@@ -75,6 +75,10 @@ class AppointmentController {
       return res.status(400).json({ error: "Data informada está indisponível." })
     }
 
+    if (provider_id == req.userId){
+      return res.status(400).json({ error: "Não é possível criar um agendamento consigo mesmo." })
+    }
+
     const appointment = await Appointment.create({
       user_id: req.userId,
       provider_id,
