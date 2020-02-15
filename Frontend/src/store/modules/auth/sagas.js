@@ -33,6 +33,7 @@ export function* signIn({ payload }){
 }
 
 export function* signUp({ payload }){
+  console.log(payload)
   try {
      const { name, email, password } = payload
 
