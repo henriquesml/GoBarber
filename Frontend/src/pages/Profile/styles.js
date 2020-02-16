@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 import { darken } from 'polished'
 
 export const Container = styled.div`
@@ -20,54 +20,53 @@ export const Container = styled.div`
       margin: 0 0 10px;
 
       &::placeholder {
-        color: rgba(255, 255, 255, 0.7)
+        color: rgba(255, 255, 255, 0.7);
       }
     }
-
     span {
       color: #fb6f91;
       align-self: flex-start;
       margin: 0 0 10px;
+      font-weight: bold;
     }
 
     hr {
-      border: 0;
-      height: 1px;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.5);
       margin: 10px 0 20px;
+      height: 1px;
+      border: 0;
     }
 
     button {
       margin: 5px 0 0;
       height: 44px;
-      background: #3b9eff;
+      background: #3d9eff;
       font-weight: bold;
-      color: #FFF;
+      color: #fff;
       border: 0;
       border-radius: 4px;
       font-size: 16px;
-      transition: background 0.2s;
+      transition: background 0.2s ease;
 
       &:hover {
-        background: ${darken(0.03, '#3b9eff')};
+        background: ${darken(0.03, '#3d9eff')};
       }
     }
   }
-
   > button {
-      width: 100%;
-      height: 44px;
-      margin: 10px 0 0;
-      background: #f64c75;
-      font-weight: bold;
-      color: #FFF;
-      border: 0;
-      border-radius: 4px;
-      font-size: 16px;
-      transition: background 0.2s;
+    width: 100%;
+    margin: 10px 0 0;
+    height: 44px;
+    background: #f64c75;
+    font-weight: bold;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background 0.2s ease;
 
-      &:hover {
-        background: ${darken(0.03, '#f64c75')};
-      }
+    &:hover {
+      background: ${darken(0.08, '#f64c75')};
     }
-`
+  }
+`;
