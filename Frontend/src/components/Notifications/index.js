@@ -20,7 +20,7 @@ export default function Notifications() {
   useEffect(() => {
     async function loadNotifications() {
       const response = await api.get('notifications')
-      
+
       const data = response.data.map(notification => ({
         ...notification,
         timeDistance: formatDistance(
@@ -39,13 +39,13 @@ export default function Notifications() {
   function handleToggleVisible() {
     setVisible(!visible)
   }
-  
+
   async function handleMarkAsRead(id) {
     await api.put(`notifications/${id}`)
 
     setNotifications(
-      notifications.map(notification => 
-        notification._id === id && {...notification, read: true}  
+      notifications.map(notification =>
+        notification._id === id && {...notification, read: true}
       )
     )
   }
@@ -58,20 +58,20 @@ export default function Notifications() {
 
       <NotificationList visible={visible} >
         <Scroll>
-          {notifications.length === 0 ? 
-            
+          {notifications.length === 0 ?
+
             <Notification unread={false}>
-              <p>Você não possui notificações :(</p>
+              <p>Você não possui notificações</p>
             </Notification>
-            
-          :            
+
+          :
             notifications.map(notification => (
               <Notification key={notification._id} unread={!notification.read}>
                 <p>{notification.content}</p>
                 <time>{notification.timeDistance}</time>
                 { !notification.read && (
-                  <button 
-                    type='button' 
+                  <button
+                    type='button'
                     onClick={() => handleMarkAsRead(notification._id)}
                   >
                     Marcar como lida
@@ -79,7 +79,7 @@ export default function Notifications() {
                 )}
               </Notification>
               )
-            ) 
+            )
           }
         </Scroll>
       </NotificationList>
